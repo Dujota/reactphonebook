@@ -3,7 +3,26 @@ import  './App.css';
 
 class App extends Component {
 
-  
+    constructor(){
+      super();
+      this.addContact = this.addContact.bind(this)
+
+      this.state = {
+        contact: []
+      }
+    }
+
+
+    addContact(name,phone,details){
+      let new_contact = {
+          name: name, 
+          phone: phone,
+          details: details
+        }
+      this.setState({ 
+        contact: this.state.contact.push(new_contact)
+      })
+    }
 
 
   render() {
